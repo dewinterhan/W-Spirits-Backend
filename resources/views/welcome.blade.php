@@ -1,88 +1,29 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
-</head>
-<body>
-{{--<div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ url('/admin') }}">Home</a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                @endif
-            @endauth
+@extends('layouts.front')
+@section('content')
+    <section class="row mx-0 py-md-5">
+        <header class="mx-auto mb-4">
+            <h2 class="text-white">Best selling products:</h2>
+        </header>
+        <div class="row mx-auto">
+            <article class="col-md-3 col-10 mb-5 mx-auto">
+                <div class="card bg-light">
+                    <a href="productpage.html" class="productLink mx-auto">
+                        <div class="card-body pb-0 text-center productbox">
+                            <img src="assets/images/articletester.png" alt="Product image" class="img-fluid">
+                            <p class="text-gray pt-3 ">GlenAllachie 10 Years Cask Strength 70cl</p>
+                        </div>
+                    </a>
+                    <div class="productboxHover">
+                        <button class="bg-transparent border-0 text-white px-0">
+                            <i class="fas fa-heart productHeartIconHover"></i>
+                        </button>
+                    </div>
+                    <div class="card-footer border-0 pt-0 pb-2 pl-2 bg-light">
+                        <button class="btn bg-transparent text-gray productBasketIconHover"><i class="fas fa-shopping-cart fa-2x"></i></button>
+                        <span class="float-right pt-2 text-success font-weight-bold">£56,50</span>
+                    </div>
+                </div>
+            </article>
         </div>
-    @endif
---}}
-<div class="content">
-    <div class="title m-b-md justify-content-center align-items-center">
-        DewinterDev
-    </div>
-</div>
-</body>
-</html>
+    </section>
+@stop

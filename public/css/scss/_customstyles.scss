@@ -1,0 +1,234 @@
+/**DIT IS MIJN EIGEN CSS BESTAND**/
+
+/**General**/
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+.text-gray {
+  color: gray;
+}
+
+/**Header**/
+
+.headerandfooterbg {
+  background: #121618;
+}
+
+.navbarimg {
+  height: 55px;
+  width: 75px;
+}
+
+.pageHeaderImgText {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%,-45%);
+}
+
+.pageHeaderImgText h2 {
+  font-size: 3rem;
+}
+/**Footer**/
+
+.footer-copyright {
+  color: gray;
+}
+
+/**Index**/
+
+//Carousel
+
+.carouselSlide1Text {
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+//Main
+
+.infoSection {
+  background: #000;
+}
+
+.welcomeSection {
+  padding: 72px;
+}
+
+/**Products**/
+
+.sidebarTitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.productbox {
+  position: relative;
+}
+
+.productboxHover {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 5%;
+  right: -1px;
+  color: #fff;
+  background-color: gray;
+  border-radius: 5px 0 0 5px;
+
+  opacity: 1;
+}
+
+.productLink:hover {
+  text-decoration: none;
+}
+
+.productBasketIconHover {
+  transition: 1s;
+}
+
+.productBasketIconHover:hover {
+  transform: rotateY(360deg);
+  color: #ffc107;
+}
+
+.productHeartIconHover {
+  padding: 2px 7px 2px 10px;
+}
+
+.productHeartIconHover:hover {
+  color: #ff9999;
+  animation: rotate-center 0.6s;
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.productbox:hover .productboxHover {
+  opacity: 1;
+}
+
+/**Productpage**/
+
+
+/**Login + Registration**/
+
+.loginlogo {
+  background:#ffc107;
+  border-radius:30px;
+  padding: 10px;
+}
+.backgroundboard {
+  background: url("../../assets/images/imagesfront/Login_Bg.jpg"), no-repeat;
+  background-attachment: fixed;
+}
+
+
+/**Contact**/
+
+/**About Us**/
+
+/**Extra animations**/
+
+
+
+
+
+/**Media Queries**/
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+  /**Index**/
+
+  //Carousel
+
+  .carouselSlide1Text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+  /**Index**/
+
+  //Carousel
+  .carouselSlide1Text {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .carouselLogo {
+    height: 25rem;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  body {
+    padding-top: 72px;
+  }
+  .fixedNav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+  .underline {
+    position: relative;
+  }
+  .underline:hover {
+    color: gray;
+    text-decoration: none;
+  }
+  .underline:after {
+    content: '';
+    position: absolute;
+    width: 0; height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    transition: width .4s ease;
+  }
+  .underline:hover:after{
+    width: 100%;
+    left: 0;
+    background: #ffc107;
+  }
+
+  .pageHover:hover{
+    color: #fff;
+    background: #ffc107;
+  }
+
+  .pageHoverPrevious:hover{
+    color: #fff;
+    background: #ffc107;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .pageHoverNext:hover{
+    color: #fff;
+    background: #ffc107;
+    border-radius: 0 5px 5px 0;
+  }
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
