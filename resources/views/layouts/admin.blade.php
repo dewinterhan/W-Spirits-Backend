@@ -61,14 +61,26 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
                 <i class="fas fa-fw fa-users"></i>
                 <span>Users</span>
             </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div id="collapseUsers" class="collapse" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Users</h6>
                     <a class="collapse-item" href="{{route('users.index')}}">All Users</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="true" aria-controls="collapseProducts">
+                <i class="fas fa-fw fa-glass-whiskey"></i>
+                <span>Products</span>
+            </a>
+            <div id="collapseProducts" class="collapse" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Products</h6>
+                    <a class="collapse-item" href="{{route('users.index')}}">All Products</a>
                 </div>
             </div>
         </li>

@@ -12,6 +12,8 @@ class VolumesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('volumes')->insert(['volume'=>'25']);
+        DB::table('volumes')->insert(['volume'=>'50']);
         DB::table('volumes')->insert(['volume'=>'70']);
         DB::table('volumes')->insert(['volume'=>'75']);
         DB::table('volumes')->insert(['volume'=>'100']);

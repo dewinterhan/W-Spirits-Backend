@@ -22,8 +22,8 @@ class CreateProductsTable extends Migration
             $table->integer('brand_id');
             $table->integer('country_id');
             $table->integer('region_id');
-            $table->integer('age_id');
-            $table->integer('characteristics_id');
+            $table->integer('age');
+            $table->string('characteristics');
             $table->integer('alcohol_percentage');
             $table->integer('stock');
             $table->timestamps();
