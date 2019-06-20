@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->integer('region_id');
             $table->integer('age_id');
             $table->integer('characteristics_id');
-            $table->integer('alcohol_percentage_id');
+            $table->integer('alcohol_percentage');
             $table->integer('stock');
             $table->timestamps();
         });

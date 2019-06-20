@@ -12,9 +12,9 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('categories')->insert(['name'=>'Single Malt Whiskey']);
-        DB::table('categories')->insert(['name'=>'Blended Whiskey']);
-        DB::table('categories')->insert(['name'=>'Bourbon']);
+        DB::table('categories')->insert(['category'=>'Single Malt Whiskey']);
+        DB::table('categories')->insert(['category'=>'Blended Whiskey']);
+        DB::table('categories')->insert(['category'=>'Bourbon']);
 
 
     }

@@ -46,7 +46,7 @@
                 <span>Dashboard</span></a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="{{url('/')}}">
+            <a class="nav-link" href="{{url('/')}}" target="_blank">
                 <i class="fas fa-fw fa-glass-whiskey"></i>
                 <span>Frontend</span></a>
         </li>
@@ -73,19 +73,60 @@
             </div>
         </li>
 
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Product Specifications
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="true" aria-controls="collapseTree">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVolumes" aria-expanded="true" aria-controls="collapseVolumes">
+                <i class="fas fa-fw fa-wine-bottle"></i>
+                <span>Volumes</span>
+            </a>
+            <div id="collapseVolumes" class="collapse" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Volumes</h6>
+                    <a class="collapse-item" href="{{route('volumes.index')}}">All Volumes</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategories" aria-expanded="true" aria-controls="collapseCategories  ">
                 <i class="fas fa-fw fa-wine-bottle"></i>
                 <span>Categories</span>
             </a>
-            <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordionSidebar">
+            <div id="collapseCategories" class="collapse" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Categories</h6>
                     <a class="collapse-item" href="{{route('categories.index')}}">All Categories</a>
                 </div>
             </div>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBrands" aria-expanded="true" aria-controls="collapseBrands">
+                <i class="fas fa-fw fa-wine-bottle"></i>
+                <span>Brands</span>
+            </a>
+            <div id="collapseBrands" class="collapse" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Brands</h6>
+                    <a class="collapse-item" href="{{route('brands.index')}}">All Brands</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegions" aria-expanded="true" aria-controls="collapseRegions">
+                <i class="fas fa-fw fa-wine-bottle"></i>
+                <span>Regions</span>
+            </a>
+            <div id="collapseRegions" class="collapse" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Regions</h6>
+                    <a class="collapse-item" href="{{route('regions.index')}}">All Regions</a>
+                </div>
+            </div>
+        </li>
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">

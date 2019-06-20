@@ -10,6 +10,12 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/cssfront/bootstrap.min.css')}}">
+    <style>
+        .backgroundboard {
+            background: url("../../../public/images/imagesfront/Login_Bg.jpg"), no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
     <title>Home</title>
 </head>
 <body>
@@ -46,84 +52,10 @@
             </div>
         </nav>
     </section>
-    <section>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{asset('images/imagesfront/barrels-background.jpg')}}" alt="First slide">
-                    <div class="carousel-caption carouselSlide1Text">
-                        <h4 class="d-md-none">Welcome to W-Spirits</h4>
-                        <img src="{{asset('images/imagesfront/Logo_White.png')}}" alt="W-Spirits logo" class="d-none d-md-inline carouselLogo">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('images/imagesfront/whiskey-inside-two.jpg')}}" alt="Second slide">
-                    <div class="carousel-caption carouselSlide2Text">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('images/imagesfront/slider2.jpg')}}" alt="Third slide">
-                    <div class="carousel-caption carouselSlide3Text">
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </section>
+    @yield('contentHeader')
 </header>
 <main class="backgroundboard">
-    <div class="container-fluid px-0">
-        <section class="row mx-0 px-0">
-            <div class="col-12 col-md-8 infoSection">
-                <div class="row mt-3 mx-auto">
-                    <div class="col-md-4 text-center">
-                        <h5 class="text-white font-weight-bold"><i class="fas fa-car-side mr-2 text-warning"></i>Fast delivery</h5>
-                        <p class="text-gray">Order before 23:59h and enjoy it the next day</p>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <h5 class="text-white font-weight-bold"><i class="fas fa-users mr-2 text-warning"></i>Something for everyone</h5>
-                        <p class="text-gray">We've got all kinds of whiskeys for all kind of different people.</p>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <h5 class="text-white font-weight-bold"><i class="fas fa-question mr-2 text-warning"></i>For any questions:</h5>
-                        <p><a href="mailto:w-spirits@gmail.com" class="text-gray underline">w-spirits@gmail.com</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 bg-warning">
-                <ul class="list-unstyled d-flex mt-4">
-                    <li class="my-2 mr-3"><a href="https://www.facebook.com"><i class="fab fa-facebook-f fa-2x text-white"></i></a></li>
-                    <li class="my-2 mr-3"><a href="https://www.twitter.com"><i class="fab fa-twitter fa-2x text-white"></i></a></li>
-                    <li class="my-2"><a href="https://www.instagram.com"><i class="fab fa-instagram fa-2x text-white"></i></a></li>
-                </ul>
-            </div>
-        </section>
-        <section class="row mx-0">
-            <div class="col-12 col-md-6 px-0">
-                <img src="assets/images/whiskey_bar.jpg" alt="" class="img-fluid">
-            </div>
-            <div class="col-12 col-md-6 welcomeSection">
-                <h2 class="text-white pb-3">Welcome to W-Spirits</h2>
-                <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam architecto, cum deserunt dignissimos doloribus hic incidunt ipsa nihil officia quis sint, totam ut vero voluptatum? Accusantium hic pariatur sunt.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem delectus excepturi fuga inventore nisi porro quasi voluptatem? Assumenda culpa eaque ipsa ipsum molestias, nemo, neque perferendis quaerat reiciendis tempore veritatis!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae cupiditate dignissimos distinctio doloremque doloribus eaque in ipsam officiis porro provident quisquam, quo quos ratione recusandae reiciendis saepe totam vel.
-                </p>
-            </div>
-        </section>
-        @yield('content')
-    </div>
+    @yield('content')
 </main>
 <footer class="headerandfooterbg font-small pt-4">
     <div class="container text-center text-md-left">

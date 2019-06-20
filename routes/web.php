@@ -27,6 +27,9 @@ Route::group(['middleware'=>'admin'],function(){
     Route::resource('/admin/users','AdminUsersController');
     Route::resource('admin/create_user', 'AdminUsersController@create');
     Route::resource('/admin/categories','AdminCategoriesController');
+    Route::resource('/admin/volumes','AdminVolumesController');
+    Route::resource('/admin/brands','AdminBrandsController');
+    Route::resource('/admin/regions','AdminRegionsController');
 });
 
 
