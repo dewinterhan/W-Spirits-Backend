@@ -30,6 +30,7 @@ Route::group(['middleware'=>'admin'],function(){
     Route::resource('/admin/volumes','AdminVolumesController');
     Route::resource('/admin/brands','AdminBrandsController');
     Route::resource('/admin/regions','AdminRegionsController');
+    Route::resource('/admin/products','AdminProductsController');
 });
 
 

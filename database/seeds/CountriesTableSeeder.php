@@ -182,6 +182,7 @@ class CountriesTableSeeder extends Seeder
         DB::table('countries')->insert(['country'=>'Samoa']);
         DB::table('countries')->insert(['country'=>'San Marino']);
         DB::table('countries')->insert(['country'=>'Saudi Arabia']);
+        DB::table('countries')->insert(['country'=>'Scotland']);
         DB::table('countries')->insert(['country'=>'Senegal']);
         DB::table('countries')->insert(['country'=>'Serbia']);
         DB::table('countries')->insert(['country'=>'Seychelles']);

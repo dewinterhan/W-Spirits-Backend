@@ -80,7 +80,7 @@
             <div id="collapseProducts" class="collapse" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Products</h6>
-                    <a class="collapse-item" href="{{route('users.index')}}">All Products</a>
+                    <a class="collapse-item" href="{{route('products.index')}}">All Products</a>
                 </div>
             </div>
         </li>

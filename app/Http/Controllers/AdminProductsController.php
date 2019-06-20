@@ -21,7 +21,12 @@ class AdminProductsController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('admin.products.index', compact('products'));
+        $volumes = Volume::pluck('volume','id')->all();
+        $categories = Category::pluck('category','id')->all();
+        $brands = Brand::pluck('brand','id')->all();
+        $countries = Country::pluck('country','id')->all();
+        $regions = Region::pluck('region','id')->all();
+        return view('admin.products.index', compact('products',  'volumes', 'categories', 'brands', 'countries', 'regions'));
     }
 
     /**
@@ -31,14 +36,13 @@ class AdminProductsController extends Controller
      */
     public function create()
     {
-        $product = Product::findOrFail($id);
-        $photos = Photo::pluck('','id')->all();
+       /* $photos = Photo::pluck('','id')->all();
         $volumes = Volume::pluck('volume','id')->all();
         $categories = Category::pluck('category','id')->all();
         $brands = Brand::pluck('brand','id')->all();
         $countries = Country::pluck('country','id')->all();
         $regions = Region::pluck('region','id')->all();
-        return view('admin.users.create', compact('product','photos', 'volumes', 'categories', 'brands', 'countries', 'regions'));
+        return view('admin.products.create', compact('photos', 'volumes', 'categories', 'brands', 'countries', 'regions'));*/
     }
 
     /**
@@ -50,13 +54,15 @@ class AdminProductsController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        if($file = $request->file('photo_id')){
+        //dd($input);
+        if($file = $request->file('photo')){
             $name = time() . $file->getClientOriginalName();
             $file->move('images', $name);
             $photo = Photo::create(['file'=>$name]);
-            $input['photo_id'] = $photo->id;
+            $input['photo'] = $photo->id;
         }
         Product::create($input);
+        return redirect('/admin/products');
     }
 
     /**
@@ -78,14 +84,14 @@ class AdminProductsController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
+        /*$product = Product::findOrFail($id);
         $photos = Photo::pluck('','id')->all();
         $volumes = Volume::pluck('volume','id')->all();
         $categories = Category::pluck('category','id')->all();
         $brands = Brand::pluck('brand','id')->all();
         $countries = Country::pluck('country','id')->all();
         $regions = Region::pluck('region','id')->all();
-        return view('admin.users.edit', compact('product', 'photos', 'volumes', 'categories', 'brands', 'countries', 'regions'));
+        return view('admin.users.edit', compact('product', 'photos', 'volumes', 'categories', 'brands', 'countries', 'regions'));*/
     }
 
     /**
