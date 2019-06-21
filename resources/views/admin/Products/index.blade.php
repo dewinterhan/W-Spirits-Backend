@@ -1,4 +1,13 @@
 @extends('layouts.admin')
+
+@section('extracss')
+    <style>
+        #page-top > div.tox.tox-silver-sink.tox-tinymce-aux > div{
+            display: none !important;
+        }
+    </style>
+@stop
+
 @section('content')
     <h1>All Products</h1>
     <div class="row d-flex justify-content-end">
@@ -26,11 +35,11 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label('price', 'Price:') !!}
-                        {!! Form::number('price', null, ['class'=>'form-control']) !!}
+                        {!! Form::number('price', null, ['class'=>'form-control', 'step'=>'0.01']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('description', 'Description:') !!}
-                        {!! Form::text('description', null, ['class'=>'form-control']) !!}
+                        {!! Form::textarea('description', null, ['id'=>'productDescription', 'class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('volume_id', 'Volume (in centiliter):') !!}
@@ -61,16 +70,16 @@
                         {!! Form::text('characteristics', null, ['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('stock', 'Stock:') !!}
-                        {!! Form::number('stock', null, ['class'=>'form-control']) !!}
-                    </div>
-                    <div class="form-group">
                         {!! Form::label('alcohol_percentage', 'Alcohol Percentage:') !!}
                         {!! Form::number('alcohol_percentage', null, ['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('photo', 'Photo:') !!}
-                        {!! Form::file('photo', null, ['class'=>'form-control']) !!}
+                        {!! Form::label('stock', 'Stock:') !!}
+                        {!! Form::number('stock', null, ['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('image', 'Product Image:') !!}
+                        {!! Form::file('image', null, ['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::submit('Create Product', ['class'=>'btn btn-warning']) !!}
@@ -85,28 +94,44 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Volume</th>
+                    <th scope="col" class="text-center">Id</th>
+                    <th scope="col" class="text-center">Name</th>
+                    <th scope="col" class="text-center">Image</th>
+                    <th scope="col" class="text-center">Price</th>
+                    <th scope="col" class="text-center">Description</th>
+                    {{--<th scope="col">Volume</th>
                     <th scope="col">Category</th>
                     <th scope="col">Brand</th>
                     <th scope="col">Country</th>
                     <th scope="col">Region</th>
                     <th scope="col">Age</th>
                     <th scope="col">Characteristics</th>
-                    <th scope="col">Stock</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col">Alcohol percentage</th>--}}
+                    <th scope="col" class="text-center">Stock</th>
+                    <th scope="col" class="text-center">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 @if ($products)
                     @foreach($products as $product)
                         <tr>
-                            <td>{{$product->id}}</td>
-                            <td>{{$product->price}}</td>
-                            <td>{{$product->description}}</td>
+                            <td class="text-center">{{$product->id}}</td>
+                            <td class="text-center">{{$product->name}}</td>
+                            <td class="text-center"><img height="150" width="75" src="{{asset('images/imagesfront/'.$product->image)}}" alt=""></td>
+                            <td class="text-center">{{$product->price}}</td>
+                            <td class="text-center">{!! $product->description !!}</td>
+                            {{--<td class="text-center">{{$product->volume->volume}}</td>
+                            <td class="text-center">{{$product->category->category}}</td>
+                            <td class="text-center">{{$product->brand->brand}}</td>
+                            <td class="text-center">{{$product->country->country}}</td>
+                            <td class="text-center">{{$product->region->region}}</td>
+                            <td class="text-center">{{$product->age}} years</td>
+                            <td class="text-center">{{$product->characteristics}}</td>
+                            <td class="text-center">{{$product->alcohol_percentage}} %</td>--}}
+                            <td class="text-center">{{$product->stock}}</td>
+                            <td class="text-center">
+                                <a href="{{route('products.edit', $product->id)}}" class="btn btn-warning mr-2">Product Details</a>
+                            </td>
                         </tr>
                     @endforeach
                 @endif

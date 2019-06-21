@@ -18,6 +18,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet">
 
+    {{--TINYMCE--}}
+    <script src="https://cdn.tiny.cloud/1/a84ypk112wx00bept8h5lnr5d1grudhyh5yvadcqvmvwc3yt/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#productDescription'
+        });
+    </script>
+
 </head>
 
 <body id="page-top">

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Brand;
 use App\Category;
 use App\Country;
-use App\Photo;
 use App\Product;
 use App\Region;
 use App\Volume;
@@ -36,13 +35,7 @@ class AdminProductsController extends Controller
      */
     public function create()
     {
-       /* $photos = Photo::pluck('','id')->all();
-        $volumes = Volume::pluck('volume','id')->all();
-        $categories = Category::pluck('category','id')->all();
-        $brands = Brand::pluck('brand','id')->all();
-        $countries = Country::pluck('country','id')->all();
-        $regions = Region::pluck('region','id')->all();
-        return view('admin.products.create', compact('photos', 'volumes', 'categories', 'brands', 'countries', 'regions'));*/
+        //
     }
 
     /**
@@ -53,13 +46,13 @@ class AdminProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        //dd($input);
-        if($file = $request->file('photo')){
-            $name = time() . $file->getClientOriginalName();
-            $file->move('images', $name);
-            $photo = Photo::create(['file'=>$name]);
-            $input['photo'] = $photo->id;
+        $input = $request->except('image');
+        //photo upload
+        $image = $request->image;
+        if ($image){
+            $imageName = $image->getClientOriginalName();
+            $image->move('images/imagesfront/',$imageName);
+            $input['image'] = $imageName;
         }
         Product::create($input);
         return redirect('/admin/products');
@@ -84,14 +77,14 @@ class AdminProductsController extends Controller
      */
     public function edit($id)
     {
-        /*$product = Product::findOrFail($id);
-        $photos = Photo::pluck('','id')->all();
+        $product = Product::findOrFail($id);
         $volumes = Volume::pluck('volume','id')->all();
         $categories = Category::pluck('category','id')->all();
         $brands = Brand::pluck('brand','id')->all();
         $countries = Country::pluck('country','id')->all();
         $regions = Region::pluck('region','id')->all();
-        return view('admin.users.edit', compact('product', 'photos', 'volumes', 'categories', 'brands', 'countries', 'regions'));*/
+        return view('admin.products.edit', compact('product',  'volumes', 'categories', 'brands', 'countries', 'regions'));
+
     }
 
     /**
@@ -104,6 +97,16 @@ class AdminProductsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $input = $request->except('image');
+        //photo upload
+        $image = $request->image;
+        if ($image){
+            $imageName = $image->getClientOriginalName();
+            $image->move('images/imagesfront/',$imageName);
+            $input['image'] = $imageName;
+        }
+
+        return redirect('/admin/products');
     }
 
     /**
@@ -114,6 +117,8 @@ class AdminProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect('/admin/products');
     }
 }

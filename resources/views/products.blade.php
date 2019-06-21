@@ -1,4 +1,4 @@
-@extends('layouts.frontHome')
+@extends('layouts.front')
 @section('contentHeader')
     <section>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
