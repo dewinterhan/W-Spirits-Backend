@@ -20,7 +20,7 @@
                         <div class="row mx-auto border-bottom border-warning pb-2">
                             <p class="display-4 font-weight-light mr-lg-5 ml-lg-5">£ {{$product->price}}</p>
                             <div class="ml-3 ml-lg-5 pt-3">
-                                <button class="btn btn-success">Add to cart</button>
+                                <a href="{{route('addToCart', $product->id)}}" class="btn btn-success">Add to cart</a>
                             </div>
                         </div>
                         <div class="row pt-4 mx-auto border-bottom border-warning">

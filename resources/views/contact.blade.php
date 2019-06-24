@@ -1,7 +1,7 @@
 @extends('layouts.front')
 @section('extracss')
     <style>
-        p, h2 {
+        p, h3 {
             color: lightgray;
         }
     </style>
@@ -12,7 +12,7 @@
             <div class="col-md-5">
                 <div class="row">
                     <div class="col-md-12 mb-4">
-                        <h2>Contact Information</h2>
+                        <h3>Contact Information</h3>
                     </div>
                     <div class="col-md-4 mb-3 text-center">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.718644697666!2d2.6048215159609045!3d51.09519974857797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dc96f6e676cdb3%3A0x815338b41a0ef8a!2sVeurnestraat+205%2C+8660+De+Panne!5e0!3m2!1snl!2sbe!4v1547472174617" style="border:0; width: 350px; height: 250px" allowfullscreen></iframe>

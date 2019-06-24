@@ -18,9 +18,17 @@ Route::get('/', function () {
 Route::get('contact', function () {
     return view('contact');
 });
+Route::get('shoppingcart', function () {
+    return view('shoppingcart');
+});
 
 Route::get('products', 'FrontController@products')->name('products');
 Route::get('product/{id}', 'FrontController@productdetails')->name('product');
+
+
+//CART
+Route::get('addCart/{id}', 'FrontController@addItemToCart')->name('addToCart');
+Route::get('removeCart/{id}', 'FrontController@removeItemFromCart')->name('removeFromCart');
 
 Auth::routes();
 

@@ -62,7 +62,7 @@
                                     </button>
                                 </div>
                                 <div class="card-footer border-0 pt-0 pb-2 pl-2 bg-light">
-                                    <button class="btn bg-transparent text-gray productBasketIconHover"><i class="fas fa-shopping-cart fa-2x"></i></button>
+                                    <a href="{{route('addToCart', $product->id)}}" class="btn bg-transparent text-gray productBasketIconHover"><i class="fas fa-shopping-cart fa-2x"></i></a>
                                     <span class="float-right pt-2 text-success font-weight-bold">{{$product->price}}</span>
                                 </div>
                             </div>

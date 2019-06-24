@@ -46,12 +46,19 @@
                         <a href="login.html"><i class="fas fa-user fa-lg text-warning"></i></a>
                     </div>
                     <div class=" my-auto d-inline ml-4">
-                        <a href="shoppingcart.html"><i class="fas fa-shopping-cart fa-lg text-warning"></i></a>
+                        <a href="{{url('shoppingcart')}}"><i class="fas fa-shopping-cart fa-lg text-warning"></i></a>
                     </div>
                 </div>
             </div>
         </nav>
     </section>
+    <section class="container-fluid position-relative px-0">
+        <img src="{{asset('images/imagesfront/slider1.jpg')}}" alt="Wooden background" class="img-fluid pageHeaderImg">
+        <div class="row pageHeaderImgText">
+            <h2><a href="" class="text-white underline">Home</a> | Products</h2>
+        </div>
+    </section>
+
 </header>
 <main>
     <div class="backgroundboard">
