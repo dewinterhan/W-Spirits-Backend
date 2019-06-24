@@ -29,16 +29,16 @@
             <div class="collapse navbar-collapse mx-auto" id="navbarMenu">
                 <ul class="navbar-nav text-center ml-lg-auto">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link underline text-gray">Home</a>
+                        <a href="{{ url('/') }}" class="nav-link underline text-gray">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="products.html" class="nav-link underline text-gray">Products</a>
+                        <a href="{{ url('products') }}" class="nav-link underline text-gray">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a href="404.html" class="nav-link underline text-gray">About Us</a>
+                        <a href="{{ url('about') }}" class="nav-link underline text-gray">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link underline text-gray">Contact Us</a>
+                        <a href="{{ url('contact') }}" class="nav-link underline text-gray">Contact Us</a>
                     </li>
                 </ul>
                 <div class="ml-lg-5 text-center">
@@ -52,7 +52,42 @@
             </div>
         </nav>
     </section>
-    @yield('contentHeader')
+    <section>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{asset('images/imagesfront/barrels-background.jpg')}}" alt="First slide">
+                    <div class="carousel-caption carouselSlide1Text">
+                        <h4 class="d-md-none">Welcome to W-Spirits</h4>
+                        <img src="{{asset('images/imagesfront/Logo_White.png')}}" alt="W-Spirits logo" class="d-none d-md-inline carouselLogo">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{asset('images/imagesfront/whiskey-inside-two.jpg')}}" alt="Second slide">
+                    <div class="carousel-caption carouselSlide2Text">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{asset('images/imagesfront/slider2.jpg')}}" alt="Third slide">
+                    <div class="carousel-caption carouselSlide3Text">
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
 </header>
 <main class="backgroundboard">
     @yield('content')
@@ -66,7 +101,7 @@
 
             </div>
             <hr class="clearfix w-100 d-md-none pb-3">
-            <div class="col-md-3 mb-md-0 mb-3">
+           {{-- <div class="col-md-3 mb-md-0 mb-3">
                 <h5 class="text-uppercase text-white">useful links</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2">
@@ -106,7 +141,7 @@
                         <a href="#" class="underline text-gray">Top 10</a>
                     </li>
                 </ul>
-            </div>
+            </div>--}}
             <div class="col-md-3 mb-md-0 mb-3">
                 <h5 class="text-uppercase text-white">Our social media</h5>
                 <ul class="list-unstyled">

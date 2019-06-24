@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/cssfront/bootstrap.min.css')}}">
-    <title>Login</title>
+    <title>404</title>
 </head>
 <body style="padding: 0;margin: 0">
 <div class="">
     <img src="{{asset('images/imagesfront/404img.jpg')}}" alt="404" class="img-fluid" style="position:relative; overflow: hidden; padding: 0; margin: 0;">
     <div class="" style="position: absolute; z-index: 1; top: 0; left: 5rem; width: 700px;">
         <p style="font-size: 15rem;">404</p>
-        <p style="font-size: 2rem;">Sorry but it seems this bottle is empty please return to the previous page.</p>
+        <p style="font-size: 2rem;">Sorry but it seems this bottle is empty, please return to the previous page.</p>
     </div>
 </div>
 <script src="{{asset('js/jquery.min.js')}}"></script>

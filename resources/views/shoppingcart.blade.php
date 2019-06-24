@@ -73,7 +73,17 @@
         </div>
         <div class="row">
             <div aria-label="Page navigation example" class="mx-auto mb-4">
-               {{$products->links()}}
+                <ul class="pagination justify-content-center">
+                    <li class="page-item pageHoverPrevious disabled">
+                        <a class="page-link text-white bg-transparent" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item pageHover"><a class="page-link bg-transparent text-white" href="#">1</a></li>
+                    <li class="page-item pageHover"><a class="page-link bg-transparent text-white" href="#">2</a></li>
+                    <li class="page-item pageHover"><a class="page-link bg-transparent text-white" href="#">3</a></li>
+                    <li class="page-item pageHoverNext">
+                        <a class="page-link bg-transparent text-white" href="#">Next</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

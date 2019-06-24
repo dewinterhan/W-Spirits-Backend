@@ -29,16 +29,16 @@
             <div class="collapse navbar-collapse mx-auto" id="navbarMenu">
                 <ul class="navbar-nav text-center ml-lg-auto">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link underline text-gray">Home</a>
+                        <a href="{{url('/')}}" class="nav-link underline text-gray">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="products.html" class="nav-link underline text-gray">Products</a>
+                        <a href="{{url('products')}}" class="nav-link underline text-gray">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a href="404.html" class="nav-link underline text-gray">About Us</a>
+                        <a href="{{url('about')}}" class="nav-link underline text-gray">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link underline text-gray">Contact Us</a>
+                        <a href="{{url('contact')}}" class="nav-link underline text-gray">Contact Us</a>
                     </li>
                 </ul>
                 <div class="ml-lg-5 text-center">
@@ -52,10 +52,11 @@
             </div>
         </nav>
     </section>
-    @yield('contentHeader')
 </header>
-<main class="backgroundboard">
-    @yield('content')
+<main>
+    <div class="backgroundboard">
+        @yield('content')
+    </div>
 </main>
 <footer class="headerandfooterbg font-small pt-4">
     <div class="container text-center text-md-left">
@@ -66,7 +67,7 @@
 
             </div>
             <hr class="clearfix w-100 d-md-none pb-3">
-            <div class="col-md-3 mb-md-0 mb-3">
+            {{--<div class="col-md-3 mb-md-0 mb-3">
                 <h5 class="text-uppercase text-white">useful links</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2">
@@ -106,7 +107,7 @@
                         <a href="#" class="underline text-gray">Top 10</a>
                     </li>
                 </ul>
-            </div>
+            </div>--}}
             <div class="col-md-3 mb-md-0 mb-3">
                 <h5 class="text-uppercase text-white">Our social media</h5>
                 <ul class="list-unstyled">

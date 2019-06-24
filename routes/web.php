@@ -15,8 +15,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('contact', function () {
+    return view('contact');
+});
 
-
+Route::get('products', 'FrontController@products')->name('products');
+Route::get('product/{id}', 'FrontController@productdetails')->name('product');
 
 Auth::routes();
 

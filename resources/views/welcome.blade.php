@@ -1,42 +1,4 @@
 @extends('layouts.frontHome')
-@section('contentHeader')
-    <section>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{asset('images/imagesfront/barrels-background.jpg')}}" alt="First slide">
-                    <div class="carousel-caption carouselSlide1Text">
-                        <h4 class="d-md-none">Welcome to W-Spirits</h4>
-                        <img src="{{asset('images/imagesfront/Logo_White.png')}}" alt="W-Spirits logo" class="d-none d-md-inline carouselLogo">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('images/imagesfront/whiskey-inside-two.jpg')}}" alt="Second slide">
-                    <div class="carousel-caption carouselSlide2Text">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('images/imagesfront/slider2.jpg')}}" alt="Third slide">
-                    <div class="carousel-caption carouselSlide3Text">
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </section>
-@stop
 @section('content')
     <div class="container-fluid px-0">
         <section class="row mx-0 px-0">
