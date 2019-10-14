@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </section>
-            <section class="col-12 col-md-6 mb-5 mb-md-0">
+            <section class="col-12 col-md-8 mb-5 mb-md-0">
                 <div class="card bg-light">
                     <div class="card-header bg-light border-bottom-0 pb-0">
                         <h2 class="text-uppercase">{{$product->name}}</h2>
@@ -75,27 +75,6 @@
                     </div>
                 </div>
             </section>
-            {{--<section class="col-12 col-md-3 mb-5 mb-md-0">
-                <div class="card bg-light">
-                    <div class="card-header border-bottom-0 pb-0 bg-light">
-                        <h3 class="text-uppercase">Offers</h3>
-                    </div>
-                    <hr class="border-warning">
-                    <div class="card-body text-center">
-                        <img src="assets/images/articletester2.png" alt="Article image 1" class="pb-2">
-                        <p>GlenAllachie 10 Years Cask Strength 70cl</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="float-left">
-                            <p class="text-danger"><s>£61,50</s></p>
-                            <p class="text-success font-weight-bold">£56,50</p>
-                        </div>
-                        <button class="bg-transparent p-0 mt-4 border-0 float-right">
-                            <i class="fas fa-shopping-cart fa-2x productBasketIconHover"></i>
-                        </button>
-                    </div>
-                </div>
-            </section>--}}
         </div>
     </div>
 

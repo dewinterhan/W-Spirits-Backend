@@ -10,25 +10,32 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 /**FRONTEND***/
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('contact', function () {
     return view('contact');
 });
-Route::get('shoppingcart', function () {
-    return view('shoppingcart');
+
+//temp
+Route::get('empty', function () {
+    Cart::destroy();
 });
 
+Route::get('/', 'FrontController@productsHome')->name('productsHome');
 Route::get('products', 'FrontController@products')->name('products');
 Route::get('product/{id}', 'FrontController@productdetails')->name('product');
 
 
 //CART
-Route::get('addCart/{id}', 'FrontController@addItemToCart')->name('addToCart');
-Route::get('removeCart/{id}', 'FrontController@removeItemFromCart')->name('removeFromCart');
+Route::get('cart', 'CartController@index')->name('cart.index');
+Route::post('addItem', 'CartController@store')->name('cart.store');
+Route::delete('cart/{product}', 'CartController@destroy')->name('cart.delete');
+
 
 Auth::routes();
 

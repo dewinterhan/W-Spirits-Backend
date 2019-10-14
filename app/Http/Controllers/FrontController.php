@@ -14,21 +14,15 @@ class FrontController extends Controller
         return view('products', compact('products'));
     }
 
+    public function productsHome()
+    {
+        $productsHome = Product::paginate(4);
+        return view('welcome', compact('productsHome'));
+    }
+
     public function productdetails($id)
     {
         $product = Product::findOrFail($id);
         return view('productdetails', compact('product'));
-    }
-
-
-    public function addItemToCart($id){
-        $product = Product::findOrFail($id);
-        Cart::add($product->id, $product->name, 1, $product->price, $product->image);
-        return back();
-    }
-
-    public function removeItemFromCart($id){
-        Cart::remove($id);
-        return back();
     }
 }

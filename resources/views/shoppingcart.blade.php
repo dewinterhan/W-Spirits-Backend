@@ -1,27 +1,37 @@
 @extends('layouts.front')
 @section('content')
     <div class="container">
+
         @if(Cart::count()>0)
             <div class="row py-5">
-                <div class="col-md-4 order-md-2 mb-4">
+                <div class="col-md-10 order-md-2 mb-4">
+                    @if(session()->has('succes_message'))
+                        <div class="alert alert-success">
+                            {{ (session()->get('succes_message')) }}
+                        </div>
+                    @endif
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">Your cart</span>
-                        <span class="badge badge-secondary badge-pill">{{Cart::coun()}}</span>
+                        <span class="badge badge-secondary badge-pill">Items in your cart: <strong class="text-warning">{{Cart::count()}}</strong></span>
                     </h4>
                     @foreach(Cart::content() as $item)
                     <ul class="list-group mb-3">
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <img class="img-fluid" src="{{asset('images/imagesfront/' . $item->image)}}" alt="">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <img class="img-fluid" src="{{asset('images/imagesfront/'.$item->image)}}" alt="{{$item->name}}">
                             <div>
-                                <h6 class="my-0">{{$item->name}}</h6>
-                                <small class="text-muted"></small>
+                                <h6 class="my-0 text-center">{{$item->name}}</h6>
                             </div>
-                            <span class="text-muted">£ {{$item->price}}</span>
+                            <span class="text-muted">€ {{$item->price}}</span>
+                            <form action="{{ route('cart.delete', $item->rowId) }}" method="POST">
+                                {{csrf_field()}}
+                                {{method_field('DELETE')}}
+                                <button type="submit" class="btn btn-danger">Remove</button>
+                            </form>
                         </li>
                     @endforeach
                         <li class="list-group-item d-flex justify-content-between">
-                            <span>Total (Pound)</span>
-                            <strong>£ {{Cart::total()}}</strong>
+                            <span>Total (Euro)</span>
+                            <strong>€ {{Cart::total()}}</strong>
                         </li>
                     </ul>
 
@@ -37,12 +47,8 @@
                 </div>
             </div>
         @else
-            <div class="flex-row pl-5">
-                <h3 class="col text-white">
-                    Sorry your shopping cart is empty at the moment.
-                </h3>
-                    <img class="img-fluid" src="{{asset('images/imagesfront/sad_face.png')}}" alt="sad monkey">
-
+            <div class="flex-row py-5">
+                <div class="alert alert-warning mb-0">Sorry your shopping cart is empty at the moment.</div>
             </div>
         @endif
            {{-- <div class="col-md-8 order-md-1">
